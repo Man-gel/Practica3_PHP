@@ -4,8 +4,19 @@
 	  <title>Tweets</title>
 	</head>
 	<body>
-	  <h1>Alumnos</h1>
-	  <img src="https://www.google.es/images/srpr/logo11w.png" /><br/>
+	   <div>
+	     <span style="color:black;font-size:20;font-weight:bold;">
+		<img src="http://pymeup.com/wp-content/uploads/2013/03/icono-twitter.png">
+		Miguel  @Cutonala
+	     </span>
+	     <br/>
+	     <span style="color:gray;margin-left:300px;">
+		Followers: 4,878,518
+             </span>
+	     <span style="color:gray;margin-left:10px;">
+		Following: 651,218
+	     </span>
+	  
 		<?php
 		   $tweets = array(
 		   /*1*/array(
@@ -56,26 +67,33 @@
 			'fecha_hora' => 'Thu Feb 25th 2015 17:34:37',
 			'retweets' => '0')
 		   );
-		   echo '<label>'.$tweets[2]['autor'].'</label>';
-		   echo '<br><br>';
+		 echo '<br><br>';
 		?>
 		<br>
 		<br>
-		<table>
-		<tr>
-		<th>ID</th>
-		<th>C&oacute;digo</th>
-		<th>Nombre</th>
-		</tr>
-		<?php /*foreach ($tweets as $tweet) { ?>
-		   <tr>
-		     <td><?php echo $tweet['id']; ?></td>
-		     <td><?php echo $tweet['autor']; ?></td>
-		     <td><?php echo $tweet['contenido']; ?></td>
-		     <td><?php echo $tweet['fecha_hora']; ?></td>
-		     <td><?php echo $tweet['retweets']; ?></td>
-		   </tr>
-		<?php } */?>
-	</table>
-   </body>
+		<?php foreach ($tweets as $tweet) { ?>
+		   <div>
+		     
+		     <span style="color:black;font-size:12pt;font-weight:bold;">
+		     <img src="http://pymeup.com/wp-content/uploads/2013/03/icono-twitter.png">
+		     <?php echo $tweet['autor']; ?>
+		     </span>
+		     <?php echo '<br/>'; ?>
+		     <p>
+	             <?php echo $tweet['contenido']; ?>
+		     </p>
+		     <?php echo '<br/>'; ?>
+		     <span style="color:gray;">
+		     <?php echo $tweet['fecha_hora']   ; ?>
+		     </span>
+		     <?php echo '<br/>'; ?>
+		     <span style="font-size:10pt;color:blue;margin-left:300px;">
+		     <?php echo "Tweets  ".$tweet['retweets']; ?>
+		     </span>
+		     <?php echo '<br><br><br>'; ?>
+
+		  </div>
+		<?php } ?>
+	       </div>
+	</body>
 </html>
